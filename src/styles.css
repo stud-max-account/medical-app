@@ -1,0 +1,40 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+ 
+@tailwind components;
+@tailwind utilities;
+
+body{
+   margin:0;
+   padding:0
+}
+
+button{
+   border: none;
+}
+
+ul{
+   list-style-type: none;
+   padding: 0;
+}
+a{
+   text-decoration: none;
+   color:black;
+}
+.custom-border-box {
+   background: white;
+
+   border: 1px solid silver;
+   border-radius: 7px;
+}
+
+
+.border-silver{
+   border-color: rgb(209 213 219);
+}
+.i-size-27{
+   width:27px;
+   height:27px;
+}
+ 

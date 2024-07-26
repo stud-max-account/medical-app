@@ -1,0 +1,13 @@
+.report-item{
+
+   
+   width:200px;
+   gap:15px;
+   border:1px solid silver;
+   display:flex;
+   flex-direction:column;
+   
+   justify-content:center;
+   min-height:150px;
+   border-radius:5px;
+ }

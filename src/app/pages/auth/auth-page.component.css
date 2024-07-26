@@ -1,0 +1,16 @@
+.auth-form{
+   max-width: 450px;
+   margin: 0 auto;
+   border:1px solid silver;
+   border-radius:12px;
+}
+.auth-form button{
+   width: 45%;
+   height: 45px;
+   border-radius:5px;
+
+}
+.active-auth-btn{
+   background-color:#03A9F4;
+   color:white;
+}

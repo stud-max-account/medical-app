@@ -1,0 +1,14 @@
+<div class="auth-page ">
+   <div class="auth-form pt-3">
+      <div class="text-center">
+         <div class="flex justify-center gap-5">
+            <button [class.active-auth-btn]="isActiveLogin==true" (click)="isActiveLogin=true">Login</button>
+            <button [class.active-auth-btn]="isActiveLogin !=true" (click)="isActiveLogin=false">Registration</button>
+         </div>
+      </div>
+      <div *ngIf="isActiveLogin; else registrationForm"> <login-form /></div>
+      <ng-template #registrationForm>
+         <registration-form />
+      </ng-template>
+   </div>
+</div>

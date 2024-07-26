@@ -1,0 +1,20 @@
+.active-list-item{
+   background-color: #DCEFFA;
+   font-weight: 700;
+   color:#44A5FF;
+ border-radius: 10px;
+  
+}
+ul{
+  list-style-type: none;
+}
+.active-tab-item{
+  background: white;
+  font-size: 18px;
+  font-weight: 600;
+  color:#44A5FF;
+  border-bottom: 2px solid #44A5FF ;
+  padding: 5px;
+
+
+}

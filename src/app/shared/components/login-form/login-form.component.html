@@ -1,0 +1,31 @@
+<div class="w-full p-5 m-auto">
+   <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmitHandler()">
+      <div class="flex flex-col gap-7">
+         <div class="login-form__item">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <input type="text" formControlName="email" id="email"
+               class="bg-gray-50 border   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+               placeholder="Enter your password" required />
+         </div>
+         <div class="login-form__item">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <input type="password" id="password" formControlName="password" autocomplete="on"
+               class="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+               placeholder="Enter your password" required />
+         </div>
+
+         <div>
+
+            <span class="text-sm self-end">Forgot password?</span>
+         </div>
+
+         <div class="text-center">
+            <button class="w-9/12 h-11 rounded bg-sky-500 text-white font-semibold text-sm cursor-pointer"
+               type="submit">Login
+               now</button>
+         </div>
+      </div>
+   </form>
+
+
+</div>

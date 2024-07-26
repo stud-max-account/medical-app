@@ -1,0 +1,13 @@
+.registration-form-container{
+ 
+   width: 100%;
+   
+}
+
+.registration-form__item{
+width: 100%;
+
+}
+.registration-form__item input{
+   border:1px solid silver;
+ }

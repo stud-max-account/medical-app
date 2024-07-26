@@ -1,0 +1,31 @@
+<div class="flex flex-col gap-5 custom-border-box h-full">
+   <div class="h-16 flex justify-between items-center px-4">
+      <span class="font-semibold">Gender</span>
+      <select class="inline-flex border-silver w-full justify-center gap-x-1.5 rounded-md
+      bg-white p-3 py-2 text-sm font-semibold text-gray-900 shadow-sm
+       ring-1 ring-inset ring-gray-300 hover:bg-gray-50 max-w-44" (change)="onSelectedYearChange($event)">
+         @for (year of lastThreeYears; track year) {
+         <option [value]=" year">{{year}} </option>
+         }
+
+
+      </select>
+   </div>
+
+   <div>
+
+      <ng-container *ngIf="!isLoading; else loading">
+         <apx-chart *ngIf="series.length !== 0; else noData" [series]="series" [chart]="genderDonutOptions.chart"
+            [labels]="genderDonutOptions.labels" [responsive]="genderDonutOptions.responsive">
+         </apx-chart>
+      </ng-container>
+
+      <ng-template #loading>
+         <span>Loading...</span>
+      </ng-template>
+
+      <ng-template #noData>
+         <span>No data</span>
+      </ng-template>
+   </div>
+</div>

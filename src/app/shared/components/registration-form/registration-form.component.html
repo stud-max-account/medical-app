@@ -1,0 +1,143 @@
+<div class="registration-form-container p-5 m-auto">
+   <form [formGroup]="registrationForm" class="registration-form" (ngSubmit)="onSubmitHandler()">
+      <div class="flex flex-col gap-7">
+
+
+         <div class="flex gap-5">
+            <div class="registration-form__item">
+               <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+               <input type="text" id="name" formControlName="name"
+                  class="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+                  required />
+            </div>
+
+            <div class="registration-form__item">
+               <label for="surname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Surname</label>
+               <input type="text" id="surname" formControlName="surname"
+                  class="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+                  required />
+            </div>
+         </div>
+
+
+
+
+
+
+
+
+
+         <div class="registration-form__item">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <input type="text" id="email" formControlName="email"
+               class="bg-gray-50 border   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+               placeholder="Enter your password" required />
+         </div>
+
+
+
+         <div class="registration-form__item">
+            <label for="dateBirth" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date
+               birth</label>
+            <p-calendar formControlName="dateBirth" dateFormat="yy-mm-dd" dataType="string" />
+            <!-- <input type="text" id="dateBirth"
+               class="bg-gray-50 border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+               placeholder="Enter your password" required /> -->
+         </div>
+
+
+
+         <div class="registration-form__item">
+            <span class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</span>
+            <div class="flex   gap-4 border-2 rounded-lg bg-gray-50 p-3 ">
+
+               <div>
+                  <p-radioButton value="m" inputId="genderMale" formControlName="gender" />
+                  <label for="genderMale" class="ml-2">
+                     Male
+                  </label>
+               </div>
+               <div>
+                  <p-radioButton value="f" inputId="genderFemale" formControlName="gender" />
+                  <label for="genderFemale" class="ml-2">
+                     Female
+                  </label>
+               </div>
+
+            </div>
+
+         </div>
+
+         <div class="registration-form__item">
+            <label for="bloodGroup" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Blood group
+            </label>
+            <select id="bloodGroup" formControlName="bloodGroup"
+               class="h-10 bg-gray-50 border border-gray-300 text-gray-600 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none">
+               <option>A+</option>
+               <option>A-</option>
+               <option>B+</option>
+               <option>B-</option>
+               <option>O+</option>
+               <option>O-</option>
+               <option>AB+</option>
+               <option>AB-</option>
+            </select>
+
+         </div>
+
+         <div class="flex gap-4">
+
+
+            <div class="registration-form__item">
+
+               <label for="emergencyContactName"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Emergency contact name</label>
+               <input type="text" id="emergencyContactName" formControlName="emergencyContactName"
+                  class="bg-gray-50 border   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+                  placeholder="Emergency contact name" required />
+
+            </div>
+            <div class="registration-form__item">
+
+               <label for="emergencyContactPhone"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Emergency contact phone</label>
+               <input type="text" id="emergencyContactPhone" formControlName="emergencyContactPhone"
+                  class="bg-gray-50 border   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+                  placeholder="Emergency contact phone" required />
+
+            </div>
+
+
+         </div>
+
+
+
+         <div class="registration-form__item">
+
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <input type="password" id="password" formControlName="password" autocomplete="on"
+               class="bg-gray-50 border   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+               placeholder="Password" required />
+
+         </div>
+
+         <div class="registration-form__item">
+
+            <label for="repeatPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat
+               password</label>
+            <input type="password" id="repeatPassword" formControlName="repeatPassword"
+               class="bg-gray-50 border   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+               placeholder="Repeat your password" required />
+
+         </div>
+
+         <div class="text-center">
+            <button class="w-9/12 h-11 rounded bg-sky-500 text-white font-semibold text-sm cursor-pointer"
+               type="submit">Sign up
+               now</button>
+         </div>
+      </div>
+   </form>
+
+
+</div>

@@ -1,0 +1,16 @@
+<div class="custom-border-box">
+   <div class="h-16 flex justify-between items-center px-4">
+      <span class="font-semibold">Patients</span>
+      <select class="inline-flex w-full justify-center gap-x-1.5 rounded-md border-silver 
+      bg-white p-3 py-2 text-sm font-semibold text-gray-900 shadow-sm
+       ring-1 ring-inset ring-gray-300 hover:bg-gray-50 max-w-44" (change)="onSelectedWeekChange($event)">
+         <option value="current">This week</option>
+         <option value="last">Last week</option>
+      </select>
+   </div>
+   <div style="text-align:center">
+      <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+         [dataLabels]="chartOptions.dataLabels" [grid]="chartOptions.grid" [stroke]="chartOptions.stroke"></apx-chart>
+
+   </div>
+</div>

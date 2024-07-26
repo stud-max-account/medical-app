@@ -1,0 +1,12 @@
+<div class="w-full  h-24 flex items-center  gap-3   p-3 rounded-md bg-cyan-400 text-black">
+   <div class="w-20 h-20">
+      <img class="w-full h-full rounded-full object-cover" [src]="patientAppointment.patient.imgUrl" />
+   </div>
+   <div class="flex flex-col gap-2">
+      <span class="text-base font-bold">{{patientAppointment.patient.name + ' '+
+         patientAppointment.patient.surname}}</span>
+      <span class="text-slate-200 font-semibold text-sm">{{patientAppointment.startTime}} -
+         {{patientAppointment.endTime}}</span>
+   </div>
+
+</div>

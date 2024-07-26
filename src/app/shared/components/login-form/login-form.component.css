@@ -1,0 +1,6 @@
+.login-form__item{
+  width: 100%;
+}
+.login-form__item input{
+   border:1px solid silver;
+ }
