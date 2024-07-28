@@ -1,0 +1,37 @@
+<div class="make-appointment-page">
+
+   <h2 class="text-xl text-center">Make an appointment</h2>
+   <div class="make-appointment__search flex flex-col gap-4   m-auto mb-10">
+      <div class="flex flex-col gap-4">
+         <span class="font-medium">Date</span>
+         <p-calendar [(ngModel)]="appointmentDate" [minDate]="minDate" dateFormat="yy-mm-dd" dataType="string"
+            styleClass="w-full" inputStyleClass="w-full" />
+      </div>
+      <div class="flex flex-col gap-4">
+         <span class="font-medium">
+            Specialization
+         </span>
+         <p-dropdown [options]="doctorSpecializations" [(ngModel)]="selectedSpecializationId"
+            optionLabel="specialization" optionValue="id" panelStyleClass="w-full" styleClass="w-full" />
+      </div>
+
+      <button (click)="findAppointments()" class="h-12 bg-sky-500 text-white rounded"
+         [disabled]="!appointmentDate">{{isDoctorAvailableAppointmentsLoading
+         ?'Loading...'
+         :'Find'}}</button>
+   </div>
+
+   <div *ngIf="doctorAvailableAppointments.length>0" class="flex flex-col gap-5">
+      <span class="text-center text-xl font-medium">Results</span>
+      <div>
+         @for(appointment of doctorAvailableAppointments; track appointment.doctor.id){
+         <doctor-appointments-card [doctorAvailableAppointments]="appointment"
+            (onAppointmentConfirmed)="onAppointmentConfirmedHandler($event)" />
+         }
+      </div>
+   </div>
+
+
+
+
+</div>

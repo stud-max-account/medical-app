@@ -10,6 +10,7 @@ import { TabMenuModule } from "primeng/tabmenu";
 import { PatientService } from "../../../services/patient.service";
 import { AuthService } from "../../../services/auth.service";
 import dayjs from 'dayjs'
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -28,9 +29,9 @@ export class PatientAppointmentsPageComponent {
 
    allAppointments: PatientVisits[] = [];
 
-   appointmentsToShow!: PatientVisits[];
+   appointmentsToShow: PatientVisits[] = [];
 
-   visitsBySpecializations: any;
+   visitsBySpecializations: any = {};
 
    activeSpeciality: string = 'All specialities';  // extract in a separate type
 
@@ -41,17 +42,15 @@ export class PatientAppointmentsPageComponent {
    columns!: any[];
 
 
-   constructor(private patientService: PatientService, private authService: AuthService) {
+   constructor(private router: Router, private patientService: PatientService, private authService: AuthService) {
 
    }
 
    ngOnInit() {
 
       this.getAllPatientAppointments();
-      this.appointmentsToShow = [...this.allAppointments];
+
       this.activeStatusVisitTab = this.tabItems[0];
-
-
       this.columns = [
          { field: 'status', header: 'Status' },
          { field: 'doctor.specialization', header: 'Specialization' },
@@ -60,7 +59,7 @@ export class PatientAppointmentsPageComponent {
          { field: 'doctor.name', header: "Doctor's name" },
 
       ];
-      this.calculateCountVisitsBySpecializations();
+
    }
 
    calculateCountVisitsBySpecializations() {
@@ -80,6 +79,7 @@ export class PatientAppointmentsPageComponent {
       }, {} as any);
 
 
+
    }
    getTotalSpecialization() {
       return Object.keys(this.visitsBySpecializations).reduce((acc, key) => acc + this.visitsBySpecializations[key].length, 0)
@@ -90,7 +90,8 @@ export class PatientAppointmentsPageComponent {
 
       this.patientService.getPatientVisits(patientId!).subscribe((data: any) => {
          this.allAppointments = data;
-
+         this.appointmentsToShow = data;
+         this.calculateCountVisitsBySpecializations();
       })
    }
 
@@ -109,7 +110,7 @@ export class PatientAppointmentsPageComponent {
 
    filterVisits(visitStatus: { label: string, value: string }) {
 
-     // extract in a separate type
+      // extract in a separate type
       if (this.activeStatusVisitTab.value == "All visits" && this.activeSpeciality == "All specialities") {
          this.appointmentsToShow = [...this.allAppointments];
          this.calculateCountVisitsBySpecializations();
@@ -156,6 +157,11 @@ export class PatientAppointmentsPageComponent {
          default:
             return 'info';
       }
+   }
+
+
+   navigateToFindAppointments() {
+      this.router.navigateByUrl('/patient/find-appointments');
    }
 
 }

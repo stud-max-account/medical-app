@@ -9,8 +9,11 @@
          <ng-container *ngIf="currentUser() !=null ; else loggedOut">
 
             <li *ngIf="currentUser()?.role=='doctor'" routerLink="/doctor">Control</li>
+            <li *ngIf="currentUser()?.role=='doctor'" routerLink="/create-appointment">Create appointment</li>
+
             <li *ngIf="currentUser()?.role=='patient'" [routerLink]="['/patient', 'my-appointments']">My appointments
             </li>
+
             <li>
                <p-avatar [image]="currentUser()?.details?.imgUrl" styleClass="mr-2 " size="large" shape="circle" />
             </li>

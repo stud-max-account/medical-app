@@ -17,7 +17,6 @@ import { provideToastr, ToastrModule } from 'ngx-toastr';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

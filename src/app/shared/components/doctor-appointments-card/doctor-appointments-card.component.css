@@ -1,0 +1,28 @@
+.doctor-appointments-card{
+   max-width:370px;
+   width:100%;
+   min-height:400px;
+   background:rgb(255, 255, 255);
+   border-radius:10px;
+   padding: 10px;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.doctor-appointments-card__avatar{
+   width:72px;
+   height:72px;
+   border-radius:100%;
+   object-fit: cover;
+ }
+ .appointment-card__time-btn{
+   border:1px solid silver;
+   border-radius: 5px;
+ }
+ 
+.appointmen_time_unavailable{
+  background-color: silver;
+  color:white;
+}
+.btn_selected{
+  background-color: skyblue;
+  color:white;
+}
